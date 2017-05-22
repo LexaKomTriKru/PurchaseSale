@@ -1,0 +1,211 @@
+object Form4: TForm4
+  Left = 615
+  Height = 353
+  Top = 348
+  Width = 227
+  Caption = 'Изменить объявление'
+  ClientHeight = 353
+  ClientWidth = 227
+  OnCreate = FormCreate
+  LCLVersion = '1.6.4.0'
+  object Button1: TButton
+    Left = 48
+    Height = 49
+    Top = 280
+    Width = 136
+    Caption = 'Изменить сохранения'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 24
+    Height = 64
+    Top = 8
+    Width = 185
+    AutoFill = True
+    Caption = 'Изменить объявление типа:'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 46
+    ClientWidth = 181
+    TabOrder = 1
+    object RadioButton1: TRadioButton
+      Left = 6
+      Height = 23
+      Top = 0
+      Width = 169
+      Caption = 'Куплю'
+      TabOrder = 0
+    end
+    object RadioButton2: TRadioButton
+      Left = 6
+      Height = 23
+      Top = 23
+      Width = 169
+      Caption = 'Продам'
+      TabOrder = 1
+    end
+  end
+  object Edit1: TEdit
+    Left = 113
+    Height = 21
+    Top = 80
+    Width = 96
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 13
+    Top = 83
+    Width = 99
+    Caption = 'Номер объявления:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 72
+    Height = 13
+    Top = 104
+    Width = 74
+    Caption = 'Что изменить?'
+    ParentColor = False
+  end
+  object CheckBox1: TCheckBox
+    Left = 57
+    Height = 17
+    Top = 126
+    Width = 18
+    OnChange = CheckBox1Change
+    TabOrder = 3
+  end
+  object CheckBox2: TCheckBox
+    Left = 57
+    Height = 17
+    Top = 153
+    Width = 18
+    OnChange = CheckBox2Change
+    TabOrder = 4
+  end
+  object CheckBox3: TCheckBox
+    Left = 57
+    Height = 17
+    Top = 177
+    Width = 18
+    OnChange = CheckBox3Change
+    TabOrder = 5
+  end
+  object CheckBox4: TCheckBox
+    Left = 57
+    Height = 17
+    Top = 201
+    Width = 18
+    OnChange = CheckBox4Change
+    TabOrder = 6
+  end
+  object CheckBox5: TCheckBox
+    Left = 57
+    Height = 17
+    Top = 225
+    Width = 18
+    OnChange = CheckBox5Change
+    TabOrder = 7
+  end
+  object CheckBox6: TCheckBox
+    Left = 57
+    Height = 17
+    Top = 249
+    Width = 18
+    OnChange = CheckBox6Change
+    TabOrder = 8
+  end
+  object Edit2: TEdit
+    Left = 81
+    Height = 21
+    Top = 125
+    Width = 80
+    Enabled = False
+    TabOrder = 9
+    TextHint = 'Название'
+  end
+  object Edit3: TEdit
+    Left = 81
+    Height = 21
+    Top = 152
+    Width = 80
+    Enabled = False
+    TabOrder = 10
+    TextHint = 'Колличество'
+  end
+  object Edit4: TEdit
+    Left = 81
+    Height = 21
+    Top = 176
+    Width = 80
+    Enabled = False
+    TabOrder = 11
+    TextHint = 'Цену'
+  end
+  object Edit5: TEdit
+    Left = 81
+    Height = 21
+    Top = 200
+    Width = 80
+    Enabled = False
+    TabOrder = 12
+    TextHint = 'Метод оплаты'
+  end
+  object Edit6: TEdit
+    Left = 81
+    Height = 21
+    Top = 224
+    Width = 80
+    Enabled = False
+    TabOrder = 13
+    TextHint = 'Контакт'
+  end
+  object Edit7: TEdit
+    Left = 81
+    Height = 21
+    Top = 248
+    Width = 80
+    Enabled = False
+    TabOrder = 14
+    TextHint = 'Примечание'
+  end
+  object MySQL50Connection1: TMySQL50Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'projectlexa'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3306'
+    )
+    Password = 'root'
+    UserName = 'root'
+    HostName = '127.0.0.1'
+    Options = []
+    SkipLibraryVersionCheck = False
+    left = 256
+    top = 168
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL50Connection1
+    Options = []
+    left = 256
+    top = 112
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL50Connection1
+    Transaction = SQLTransaction1
+    Options = []
+    Params = <>
+    left = 256
+    top = 224
+  end
+end

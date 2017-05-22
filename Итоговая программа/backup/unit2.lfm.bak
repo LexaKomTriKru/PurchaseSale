@@ -1,0 +1,136 @@
+object Form2: TForm2
+  Left = 239
+  Height = 330
+  Top = 325
+  Width = 226
+  Caption = 'Создание объявления'
+  ClientHeight = 330
+  ClientWidth = 226
+  OnCreate = FormCreate
+  LCLVersion = '1.6.4.0'
+  object RadioGroup1: TRadioGroup
+    Left = 21
+    Height = 64
+    Top = 8
+    Width = 185
+    AutoFill = True
+    Caption = 'Тип предложения'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 46
+    ClientWidth = 181
+    TabOrder = 0
+    object RadioButton1: TRadioButton
+      Left = 6
+      Height = 23
+      Top = 0
+      Width = 169
+      Caption = 'Хочу продать'
+      OnChange = RadioButton1Change
+      TabOrder = 0
+    end
+    object RadioButton2: TRadioButton
+      Left = 6
+      Height = 23
+      Top = 23
+      Width = 169
+      Caption = 'Хочу купить'
+      TabOrder = 1
+    end
+  end
+  object Edit1: TEdit
+    Left = 48
+    Height = 21
+    Top = 80
+    Width = 120
+    TabOrder = 1
+    TextHint = 'Название товара'
+  end
+  object Edit2: TEdit
+    Left = 48
+    Height = 21
+    Top = 114
+    Width = 120
+    TabOrder = 2
+    TextHint = 'Объем товара'
+  end
+  object Edit3: TEdit
+    Left = 48
+    Height = 21
+    Top = 143
+    Width = 120
+    TabOrder = 3
+    TextHint = 'Цена товара'
+  end
+  object Edit4: TEdit
+    Left = 48
+    Height = 21
+    Top = 175
+    Width = 120
+    TabOrder = 4
+    TextHint = 'Метод оплаты'
+  end
+  object Edit5: TEdit
+    Left = 48
+    Height = 21
+    Top = 210
+    Width = 120
+    TabOrder = 5
+    TextHint = 'Контакты'
+  end
+  object Edit6: TEdit
+    Left = 48
+    Height = 21
+    Top = 239
+    Width = 120
+    TabOrder = 6
+    TextHint = 'Примечание'
+  end
+  object Button1: TButton
+    Left = 32
+    Height = 25
+    Top = 280
+    Width = 144
+    Caption = 'Сохранить объявление'
+    OnClick = Button1Click
+    TabOrder = 7
+  end
+  object MySQL50Connection1: TMySQL50Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'projectlexa'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3306'
+    )
+    Password = 'root'
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = '127.0.0.1'
+    Options = []
+    SkipLibraryVersionCheck = False
+    left = 232
+    top = 24
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL50Connection1
+    Options = []
+    left = 232
+    top = 80
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL50Connection1
+    Transaction = SQLTransaction1
+    Options = []
+    Params = <>
+    left = 232
+    top = 134
+  end
+end

@@ -1,0 +1,93 @@
+object Form5: TForm5
+  Left = 779
+  Height = 189
+  Top = 384
+  Width = 257
+  Caption = 'Удаление объявления'
+  ClientHeight = 189
+  ClientWidth = 257
+  LCLVersion = '1.6.4.0'
+  object Button1: TButton
+    Left = 48
+    Height = 49
+    Top = 128
+    Width = 131
+    Caption = 'Удалить объявление'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 72
+    Height = 21
+    Top = 85
+    Width = 96
+    TabOrder = 1
+    TextHint = 'Номер объявления'
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 32
+    Height = 64
+    Top = 8
+    Width = 185
+    AutoFill = True
+    Caption = 'Удалить объявление типа:'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 46
+    ClientWidth = 181
+    TabOrder = 2
+    object RadioButton1: TRadioButton
+      Left = 6
+      Height = 23
+      Top = 0
+      Width = 169
+      Caption = 'Куплю'
+      TabOrder = 0
+    end
+    object RadioButton2: TRadioButton
+      Left = 6
+      Height = 23
+      Top = 23
+      Width = 169
+      Caption = 'Продам'
+      TabOrder = 1
+    end
+  end
+  object MySQL50Connection1: TMySQL50Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'projectlexa'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3306'
+    )
+    Password = 'root'
+    UserName = 'root'
+    HostName = '127.0.0.1'
+    Options = []
+    SkipLibraryVersionCheck = False
+    left = 232
+    top = 80
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL50Connection1
+    Options = []
+    left = 232
+    top = 24
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL50Connection1
+    Transaction = SQLTransaction1
+    Options = []
+    Params = <>
+    left = 232
+    top = 136
+  end
+end
